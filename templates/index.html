@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Tracker</title>
+</head>
+<body>
+    <h1>Tracked Files</h1>
+    <ul>
+        {% for zip_info in zip_files_info %}
+        <li>
+            <h3>{{ zip_info["zip_file"] }}</h3>
+            <ul>
+                {% for file_name in zip_info["files_inside"] %}
+                <li>{{ file_name }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
